@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Mis 38 Años! - Florencia Villagra</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Pantalla de Bienvenida (Overlay de Entrada con Foto de Fondo) -->
+    <div id="welcome-screen" class="welcome-screen">
+        <div class="welcome-card">
+            <span class="welcome-sub">Estás invitado/a a una noche única</span>
+            <h1>Florencia Villagra</h1>
+            <p>Celebremos juntos mis 38 años</p>
+            <button id="btn-open" class="btn-gold">Abrir Invitación</button>
+        </div>
+    </div>
+
+    <!-- Contenido Principal de la Invitación (Oculto al inicio) -->
+    <main id="main-content" class="main-content hidden">
+        <div class="invitation-card">
+            
+            <!-- Encabezado -->
+            <header class="card-header">
+                <span class="badge">¡Llegó el gran momento!</span>
+                <h2>Florencia Villagra</h2>
+                <div class="age-container">
+                    <span class="number">38</span>
+                    <span class="label">Años de Festejo</span>
+                </div>
+            </header>
+
+            <!-- Mensaje -->
+            <section class="card-message">
+                <p>Preparate para vivir una noche inolvidable llena de momentos mágicos, buena música y la mejor energía.</p>
+            </section>
+
+            <!-- Detalles del Evento -->
+            <section class="card-details">
+                <div class="detail-item">
+                    <div class="icon">📅</div>
+                    <div class="info">
+                        <h4>Fecha</h4>
+                        <p>Lunes, 05 de Julio de 2027</p>
+                    </div>
+                </div>
+
+                <div class="detail-item">
+                    <div class="icon">⏰</div>
+                    <div class="info">
+                        <h4>Hora</h4>
+                        <p>21:30 hs</p>
+                    </div>
+                </div>
+
+                <div class="detail-item">
+                    <div class="icon">📍</div>
+                    <div class="info">
+                        <h4>Lugar</h4>
+                        <p>Trewa Club</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección de Confirmación (RSVP) -->
+            <section class="card-rsvp">
+                <a href="https://wa.me/?text=¡Hola%20Florencia!%20Confirmo%20mi%20asistencia%20a%20tu%20cumpleaños%20en%20Trewa%20Club." target="_blank" class="btn-whatsapp">
+                    Confirmar Asistencia
+                </a>
+            </section>
+
+            <!-- Footer -->
+            <footer class="card-footer">
+                <p>¡Te espero para brindar juntos!</p>
+            </footer>
+
+        </div>
+    </main>
+
+    <!-- Enlace al JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>

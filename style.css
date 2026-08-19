@@ -1,0 +1,276 @@
+/* Variables de Diseño y Colores Impactantes */
+:root {
+    --card-bg: rgba(12, 10, 18, 0.85);
+    --gold: #dfb15b;
+    --gold-light: #f7e3aa;
+    --gold-dark: #9e7529;
+    --text-main: #f0ede6;
+    --text-muted: #d0cce0;
+    --border-gold: rgba(223, 177, 91, 0.4);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    /* Imagen de fondo en ambas pantallas con capa oscura para legibilidad */
+    background: linear-gradient(rgba(7, 6, 11, 0.82), rgba(7, 6, 11, 0.92)), url('../foto-florencia.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    padding: 20px;
+}
+
+/* Pantalla de Bienvenida */
+.welcome-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.welcome-screen.fade-out {
+    opacity: 0;
+    transform: scale(1.1);
+    pointer-events: none;
+}
+
+.welcome-card {
+    text-align: center;
+    padding: 40px;
+    max-width: 500px;
+    background: rgba(12, 10, 18, 0.75);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border-gold);
+    border-radius: 28px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8);
+    animation: zoomInEntrance 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.welcome-sub {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--gold-light);
+    display: block;
+    margin-bottom: 15px;
+}
+
+.welcome-card h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: #fff;
+    margin-bottom: 10px;
+    text-shadow: 0 0 20px rgba(223, 177, 91, 0.4);
+}
+
+.welcome-card p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    margin-bottom: 30px;
+}
+
+/* Botones con Estilo Dorado Brillante */
+.btn-gold, .btn-whatsapp {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    color: #0c0a14;
+    font-weight: 700;
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(223, 177, 91, 0.3);
+    transition: all 0.4s ease;
+}
+
+.btn-gold:hover, .btn-whatsapp:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 15px 30px rgba(223, 177, 91, 0.5);
+    background: linear-gradient(135deg, var(--gold-light), var(--gold));
+}
+
+/* Tarjeta Principal */
+.main-content {
+    width: 100%;
+    max-width: 520px;
+    transition: all 1s ease;
+}
+
+.hidden {
+    display: none;
+    opacity: 0;
+}
+
+.visible {
+    display: block;
+    animation: fadeInUpContent 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.invitation-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--border-gold);
+    border-radius: 28px;
+    padding: 45px 30px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(223, 177, 91, 0.15);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Encabezado de la Tarjeta */
+.card-header .badge {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    color: var(--gold-light);
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.card-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    color: #fff;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.age-container {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(223, 177, 91, 0.1);
+    border: 1px solid var(--border-gold);
+    padding: 10px 25px;
+    border-radius: 20px;
+    margin-bottom: 25px;
+}
+
+.age-container .number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+}
+
+.age-container .label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-muted);
+}
+
+/* Mensaje Central */
+.card-message {
+    margin-bottom: 30px;
+}
+
+.card-message p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+/* Detalles (Lista) */
+.card-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 15px 20px;
+    border-radius: 16px;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+.detail-item:hover {
+    border-color: var(--border-gold);
+    transform: translateX(5px);
+    background: rgba(223, 177, 91, 0.08);
+}
+
+.detail-item .icon {
+    font-size: 1.5rem;
+    margin-right: 15px;
+}
+
+.detail-item h4 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--gold);
+    margin-bottom: 3px;
+}
+
+.detail-item p {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+/* RSVP y Footer */
+.card-rsvp {
+    margin-bottom: 25px;
+}
+
+.btn-whatsapp {
+    width: 100%;
+    text-align: center;
+}
+
+.card-footer {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--gold-light);
+}
+
+/* Animaciones Avanzadas (Keyframes) */
+@keyframes zoomInEntrance {
+    0% { opacity: 0; transform: scale(0.85) translateY(30px); }
+    100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes fadeInUpContent {
+    0% { opacity: 0; transform: translateY(40px) scale(0.95); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Responsividad Total para Celulares */
+@media (max-width: 480px) {
+    .invitation-card, .welcome-card {
+        padding: 30px 20px;
+    }
+    .card-header h2 {
+        font-size: 2.3rem;
+    }
+    .welcome-card h1 {
+        font-size: 2.4rem;
+    }
+}
