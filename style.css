@@ -18,7 +18,7 @@
 body {
     font-family: 'Montserrat', sans-serif;
     /* Imagen de fondo en ambas pantallas con capa oscura para legibilidad */
-    background: linear-gradient(rgba(7, 6, 11, 0.82), rgba(7, 6, 11, 0.92)), url('foto-florencia.jpg') no-repeat center center fixed;
+    background: linear-gradient(rgba(7, 6, 11, 0.82), rgba(7, 6, 11, 0.92)), url('/Cumple-Flor/foto-florencia.jpg') no-repeat center center fixed;
     background-size: cover;
     color: var(--text-main);
     min-height: 100vh;
