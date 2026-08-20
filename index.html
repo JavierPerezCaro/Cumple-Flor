@@ -10,7 +10,7 @@
 </head>
 <body>
 
-    <!-- Pantalla de Bienvenida (Overlay de Entrada con Foto de Fondo) -->
+    <!-- Pantalla de Bienvenida -->
     <div id="welcome-screen" class="welcome-screen">
         <div class="welcome-card">
             <span class="welcome-sub">Estás invitado/a a una noche única</span>
@@ -20,11 +20,10 @@
         </div>
     </div>
 
-    <!-- Contenido Principal de la Invitación (Oculto al inicio) -->
+    <!-- Contenido Principal de la Invitación -->
     <main id="main-content" class="main-content hidden">
         <div class="invitation-card">
             
-            <!-- Encabezado -->
             <header class="card-header">
                 <span class="badge">¡Llegó el gran momento!</span>
                 <h2>Florencia Villagra</h2>
@@ -34,12 +33,10 @@
                 </div>
             </header>
 
-            <!-- Mensaje -->
             <section class="card-message">
                 <p>Preparate para vivir una noche inolvidable llena de momentos mágicos, buena música y la mejor energía.</p>
             </section>
 
-            <!-- Detalles del Evento -->
             <section class="card-details">
                 <div class="detail-item">
                     <div class="icon">📅</div>
@@ -66,14 +63,10 @@
                 </div>
             </section>
 
-            <!-- Sección de Confirmación (RSVP) -->
             <section class="card-rsvp">
-                <a href="https://wa.me/?text=¡Hola%20Florencia!%20Confirmo%20mi%20asistencia%20a%20tu%20cumpleaños%20en%20Trewa%20Club." target="_blank" class="btn-whatsapp">
-                    Confirmar Asistencia
-                </a>
+                <button id="btn-open-rsvp" class="btn-whatsapp">Confirmar Asistencia</button>
             </section>
 
-            <!-- Footer -->
             <footer class="card-footer">
                 <p>¡Te espero para brindar juntos!</p>
             </footer>
@@ -81,7 +74,44 @@
         </div>
     </main>
 
-    <!-- Enlace al JS -->
+    <!-- VENTANA FLOTANTE (MODAL) DE CONFIRMACIÓN -->
+    <div id="rsvp-modal" class="modal hidden">
+        <div class="modal-content">
+            <span id="close-modal" class="close-btn">&times;</span>
+            
+            <!-- Formulario -->
+            <div id="form-container">
+                <h3>Confirmar Asistencia</h3>
+                <p>Completa tus datos para agendarte:</p>
+                
+                <form id="rsvp-form">
+                    <div class="form-group">
+                        <input type="text" id="nombre" placeholder="Nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="apellido" placeholder="Apellido" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="dni" placeholder="DNI" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="acompanante" placeholder="Nombre de tu acompañante (Opcional)">
+                    </div>
+                    <button type="submit" id="btn-submit" class="btn-gold" style="width: 100%;">Enviar Confirmación</button>
+                </form>
+            </div>
+
+            <!-- Pantalla de Agradecimiento (Oculta al inicio) -->
+            <div id="success-message" class="success-screen hidden">
+                <div class="success-icon">✨</div>
+                <h3>¡Muchas Gracias!</h3>
+                <p>¡Te esperamos para celebrar juntos esta noche única!</p>
+                <button id="btn-close-success" class="btn-gold" style="width: 100%; margin-top: 15px;">Cerrar</button>
+            </div>
+
+        </div>
+    </div>
+
     <script src="js/main.js"></script>
 </body>
 </html>
