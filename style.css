@@ -17,8 +17,7 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    /* Imagen de fondo en ambas pantallas con capa oscura para legibilidad */
-    background: linear-gradient(rgba(7, 6, 11, 0.82), rgba(7, 6, 11, 0.92)), url('/Cumple-Flor/foto-florencia.jpg') no-repeat center center fixed;
+    background: linear-gradient(rgba(7, 6, 11, 0.82), rgba(7, 6, 11, 0.92)), url('foto-florencia.jpg') no-repeat center center fixed;
     background-size: cover;
     color: var(--text-main);
     min-height: 100vh;
@@ -251,7 +250,87 @@ body {
     color: var(--gold-light);
 }
 
-/* Animaciones Avanzadas (Keyframes) */
+/* Estilos para la Ventana Flotante (Modal) de Confirmación */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(7, 6, 11, 0.85);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+    transition: opacity 0.3s ease;
+}
+
+.modal.hidden {
+    display: none;
+    opacity: 0;
+}
+
+.modal-content {
+    background: var(--card-bg, #12101e);
+    border: 1px solid var(--border-gold, #dfb15b);
+    padding: 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+}
+
+.modal-content h3 {
+    font-family: 'Playfair Display', serif;
+    color: #fff;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.modal-content p {
+    color: var(--text-muted, #d0cce0);
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.5rem;
+    color: var(--gold, #dfb15b);
+    cursor: pointer;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    border-color: var(--gold, #dfb15b);
+}
+
+.form-group input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* Animaciones */
 @keyframes zoomInEntrance {
     0% { opacity: 0; transform: scale(0.85) translateY(30px); }
     100% { opacity: 1; transform: scale(1) translateY(0); }
@@ -262,7 +341,6 @@ body {
     100% { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-/* Responsividad Total para Celulares */
 @media (max-width: 480px) {
     .invitation-card, .welcome-card {
         padding: 30px 20px;
